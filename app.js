@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('./db.js');
 const app = express();
-const PORT = 3000;
+const PORT = 8000;
 
 app.use(express.json());
 
@@ -78,6 +78,6 @@ db.serialize(() => {
   `);
 });
 
-app.listen(PORT, () => {
-  console.log(`API corriendo en http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0',() => {
+  console.log(`API corriendo en http://0.0.0.0:${PORT}`);
 });
